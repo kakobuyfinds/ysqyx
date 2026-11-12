@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#17283c">
+  <title>BBDBuy spreadsheet | Dansk guide til produktlinks og QC</title>
+  <meta name="description" content="Dansk guide til BBDBuy spreadsheet. Find kategorier for sko, tøj og tilbehør, og sammenlign produktlinks, størrelser, QC-billeder og fragt til Danmark.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:title" content="BBDBuy spreadsheet | Dansk guide til produktlinks og QC">
+  <meta property="og:description" content="Find kategorier for sko, tøj og tilbehør, og sammenlign produktlinks, størrelser, QC-billeder og fragt til Danmark.">
+  <!--
+    Researchgrundlag: 10 forskellige websteder fra websøgningen. Googles første resultatside kunne ikke verificeres direkte.
+    bbdbuy-sheet.com, bbdbuyspreadsheet.com, bbdbuy.org, repsheet.net, sopel.fit,
+    one-to-oneyupoo.com, bbdbuy.spreadsheet.tv, bbdspread.com, bbdbuy.net, bbdbuy.app.
+    Sekundære emner: BBDBuy guide, BBDBuy produktlinks, BBDBuy QC-billeder, BBDBuy fragt til Danmark.
+    Long-tail-emner: sneakers med modelnummer, Nike sneakers i EU-størrelser, indvendig sållængde i cm,
+    fodlængde og skobredde, størrelsesguide til hoodies, målskema for T-shirts, brystvidde på jakker,
+    benlængde på bukser, taljemål på shorts, hovedmål til kasketter, pasform på fodboldtrøjer,
+    måleskema til todelte sæt, størrelsesskema for undertøj, armbånd efter håndledsmål,
+    kædelængde på halskæder, produktlinks med varenummer, tilgængelige farvevarianter,
+    nærbilleder af syninger, billeder af såler og hæle, QC-billeder med målebånd,
+    fragt til dansk postnummer, faktisk vægt og volumenvægt, fragtomkostninger i danske kroner,
+    transportørens gebyrer, leveringsvilkår til Danmark, returvilkår før bestilling.
+  -->
+  <style>
+    :root{color-scheme:light;--paper:#f6f3ea;--ink:#17283c;--muted:#485567;--line:#c9c8bf;--accent:#e9f48b}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 system-ui,sans-serif}
+    a{color:inherit;text-underline-offset:.22em}
+    :focus-visible{outline:3px solid #ae4800;outline-offset:4px}
+    .wrap{width:min(72rem,calc(100% - 2rem));margin-inline:auto}
+    .bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem 1rem;padding-block:1rem}
+    .brand{font-weight:800;letter-spacing:-.025em}
+    .intro{display:grid;grid-template-columns:1.2fr .8fr;background:var(--ink);color:white;border-radius:1rem;overflow:hidden}
+    .intro-copy{padding:clamp(1.4rem,5vw,4rem)}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.12}
+    h1{font-size:clamp(2.1rem,6.2vw,5.25rem);letter-spacing:-.07em;margin-bottom:1rem}
+    h2{font-size:clamp(1.55rem,3.6vw,2.55rem);letter-spacing:-.04em}
+    h3{font-size:1.24rem}
+    p+p,h2+p,h3+p{margin-top:.65rem}
+    .intro p{max-width:46ch;color:#e5ebf0}
+    .cta{display:inline-block;margin-top:1.15rem;padding:.65rem 1rem;background:var(--accent);color:var(--ink);border-radius:.5rem;font-weight:750}
+    .hero-image{display:block;width:100%;height:100%;min-height:14rem;object-fit:contain;background:#fff}
+    .section{margin-block:clamp(2rem,5vw,4rem)}
+    .categories,.gallery,.articles{display:grid;gap:.75rem;margin-top:1rem}
+    .categories{grid-template-columns:repeat(5,minmax(0,1fr))}
+    .categories a{display:flex;justify-content:space-between;align-items:center;gap:.35rem;padding:.7rem .8rem;background:#fff;border:1px solid var(--line);border-radius:.5rem;font-weight:650}
+    .categories a:hover{background:var(--accent)}
+    .gallery,.articles{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .gallery img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:#ecebe6;border-radius:.55rem}
+    figcaption{padding-top:.4rem;color:var(--muted);font-size:.9rem}
+    .articles article{padding:1rem;background:#fff;border-top:4px solid var(--ink);border-radius:0 0 .55rem .55rem}
+    .faq{max-width:53rem}
+    details{border-bottom:1px solid var(--line);padding:.8rem 0}
+    details:first-of-type{margin-top:.6rem}
+    details p{margin:.45rem 0 0 1.1rem}
+    summary{font-weight:720;cursor:pointer}
+    footer{border-top:1px solid var(--line);padding-block:1.1rem 1.5rem}
+    footer p{color:var(--muted);font-size:.9rem}
+    @media(max-width:850px){
+      .categories{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .articles{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:610px){
+      .intro{grid-template-columns:1fr}
+      .hero-image{height:clamp(13rem,48vw,18rem);min-height:0}
+      .categories,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:370px){.articles{grid-template-columns:1fr}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "name":"BBDBuy spreadsheet | Dansk guide til produktlinks og QC",
+    "inLanguage":"da",
+    "mainEntity":[
+      {"@type":"Question","name":"Hvad er et BBDBuy spreadsheet?","acceptedAnswer":{"@type":"Answer","text":"Det er en oversigt over varer og produktlinks. En post kan indeholde varenummer, kategori, variant og billeder, alt efter hvem der vedligeholder oversigten."}},
+      {"@type":"Question","name":"Hvad viser et QC-billede?","acceptedAnswer":{"@type":"Answer","text":"Et QC-billede viser synlige detaljer på den fotograferede vare, for eksempel syninger, farve og mål. Billedet alene kan ikke bekræfte ægthed."}},
+      {"@type":"Question","name":"Hvordan sammenligner jeg fragt til Danmark?","acceptedAnswer":{"@type":"Answer","text":"Brug samme danske postnummer og pakkemål i hvert tilbud. Sammenlign den samlede pris i danske kroner, og tjek, hvilke afgifter og gebyrer der er medregnet."}},
+      {"@type":"Question","name":"Hvor fører kategorilinkene hen?","acceptedAnswer":{"@type":"Answer","text":"Kategorilinkene åbner de angivne kategorier hos CAFANS. Eksempelbillederne viser de nævnte mærker som inspiration."}}
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/ysqyx/">
+</head>
+<body>
+  <header class="bar wrap">
+    <a class="brand" href="https://www.cafans.com">www.cafans.com</a>
+    <span>Dansk indkøbsguide</span>
+  </header>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <h1 id="page-title">BBDBuy spreadsheet</h1>
+        <p>Brug en produktoversigt til at finde en model, sammenligne størrelser og tjekke varen, før du bestiller. Her finder du en dansk guide til sko, tøj og tilbehør samt links til CAFANS’ kategorier.</p>
+        <a class="cta" href="https://www.cafans.com">Åbn CAFANS</a>
+      </div>
+      <img class="hero-image" src="https://classic.cdn.media.amplience.net/i/hibbett/5201Z_1000_left1?w=720&amp;fmt=webp" width="720" height="720" fetchpriority="high" alt="Hvid Nike Air Max LTD 3-sneaker set fra siden">
+    </section>
+
+    <nav class="section" aria-labelledby="categories-title">
+      <h2 id="categories-title">Gennemse kategorier</h2>
+      <div class="categories">
+        <a href="https://cafans.com/category-911-Shoes.html">Sko <span aria-hidden="true">↗</span></a>
+        <a href="https://cafans.com/category-912-Hoodies%2FSweaters.html">Hættetrøjer og strik <span aria-hidden="true">↗</span></a>
+        <a href="https://cafans.com/category-913-T-Shirts.html">T-shirts <span aria-hidden="true">↗</span></a>
+        <a href="https://cafans.com/category-914-Jackets.html">Jakker <span aria-hidden="true">↗</span></a>
+        <a href="https://cafans.com/category-915-Pants%2FShorts.html">Bukser og shorts <span aria-hidden="true">↗</span></a>
+        <a href="https://cafans.com/category-916-Headwear.html">Hovedbeklædning <span aria-hidden="true">↗</span></a>
+        <a href="https://cafans.com/category-917-Sets.html">Sæt <span aria-hidden="true">↗</span></a>
+        <a href="https://cafans.com/category-918-underwear%2Funderpants.html">Undertøj <span aria-hidden="true">↗</span></a>
+        <a href="https://cafans.com/category-919-Jersey.html">Sportstrøjer <span aria-hidden="true">↗</span></a>
+        <a href="https://cafans.com/category-920-Accessories.html">Tilbehør <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+
+    <section class="section" aria-labelledby="guides-title">
+      <h2 id="guides-title">Fra produktlink til bestilling</h2>
+      <div class="articles">
+        <article>
+          <h3>Find de rigtige BBDBuy produktlinks</h3>
+          <p>Begynd med kategori, modelnummer og farve. Åbn produktlinket, og sammenhold varenummeret med oversigten. Tjek, om den ønskede farvevariant og størrelse kan vælges, og gem linket sammen med variantens navn.</p>
+        </article>
+        <article>
+          <h3>BBDBuy guide til størrelser</h3>
+          <p>Ved sneakers kan du sammenligne fodlængde, skobredde og den oplyste indvendige sållængde i centimeter. Mål en hoodie eller T-shirt, der passer, fladt fra armhule til armhule. Ved bukser og shorts er taljemål og benlængde gode udgangspunkter.</p>
+          <p>Brug hovedmålet til kasketter og brystvidden til jakker og sportstrøjer. Ved todelte sæt er det værd at tjekke målskemaet for både over- og underdel.</p>
+        </article>
+        <article>
+          <h3>Læs BBDBuy QC-billeder</h3>
+          <p>Se efter nærbilleder af syninger, såler og hæle. Et foto med målebånd hjælper dig med at vurdere længde og bredde. Ved smykker kan du tjekke låsen og sammenligne kædelængde eller håndledsmål med varebeskrivelsen.</p>
+        </article>
+        <article>
+          <h3>Beregn BBDBuy fragt til Danmark</h3>
+          <p>Sammenlign fragt til dit danske postnummer. Tjek, om transportøren beregner prisen efter faktisk vægt eller volumenvægt. Sammenlign varepris og fragt i danske kroner, og læs oplysninger om transportørens gebyrer, levering og retur.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Eksempler på tøj og tilbehør</h2>
+      <div class="gallery">
+        <figure>
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1767030307/798115_XJHN3_3254_001_100_0000_Light-t.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Olivengrøn Gucci T-shirt med broderet logo på brystet">
+          <figcaption>Gucci · T-shirt i bomuldsjersey</figcaption>
+        </figure>
+        <figure>
+          <img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-denim-cap--M5451M_PM1_Worn%20view.png?hei=480&amp;wid=480&amp;fmt=jpeg" width="480" height="480" loading="lazy" decoding="async" alt="Model med grøn Louis Vuitton denimkasket med monogram">
+          <figcaption>Louis Vuitton · Kasket i denim</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.hermes.com/is/image/hermesproduct/armreif-clic-h--700001F%208X-front-wm-1-0-0-1000-1000_g.jpg?wid=480" width="480" height="480" loading="lazy" decoding="async" alt="Blåt Hermès Clic H-armbånd med guldfarvet H-lås">
+          <figcaption>Hermès · Clic H-armbånd</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.christiandior.cn/is/image/diorprod/LOOK_F_25_2_LOOK_805_E12?%24lookDefault_GH-GHC%24=&amp;bfc=on&amp;crop=568%2C0%2C1864%2C2000&amp;hei=480&amp;qlt=80&amp;scale=1&amp;wid=444" width="444" height="480" loading="lazy" decoding="async" alt="Dior Petit CD-halskæde med guldfarvet kæde og CD-vedhæng med krystaludsmykning">
+          <figcaption>Dior · Petit CD-halskæde</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Spørgsmål og svar</h2>
+      <details open>
+        <summary>Hvad er et BBDBuy spreadsheet?</summary>
+        <p>Det er en oversigt over varer og produktlinks. En post kan indeholde varenummer, kategori, variant og billeder, alt efter hvem der vedligeholder oversigten.</p>
+      </details>
+      <details>
+        <summary>Hvad viser et QC-billede?</summary>
+        <p>Et QC-billede viser synlige detaljer på den fotograferede vare, for eksempel syninger, farve og mål. Billedet alene kan ikke bekræfte ægthed.</p>
+      </details>
+      <details>
+        <summary>Hvordan sammenligner jeg fragt til Danmark?</summary>
+        <p>Brug samme danske postnummer og pakkemål i hvert tilbud. Sammenlign den samlede pris i danske kroner, og tjek, hvilke afgifter og gebyrer der er medregnet.</p>
+      </details>
+      <details>
+        <summary>Hvor fører kategorilinkene hen?</summary>
+        <p>Kategorilinkene åbner de angivne kategorier hos CAFANS. Eksempelbillederne viser de nævnte mærker som inspiration.</p>
+      </details>
+    </section>
+  </main>
+  <footer class="wrap">
+    <a class="brand" href="https://www.cafans.com">www.cafans.com</a>
+    <p>Dansk indkøbsguide med illustrative mærkebilleder.</p>
+  </footer>
+</body>
+</html>
